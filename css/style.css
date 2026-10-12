@@ -1,5 +1,5 @@
 body {
-    background-color:rosybrown;
+    background-color:rgb(143, 186, 188);
     height: 100vh;
 }
 
@@ -9,7 +9,7 @@ body {
 }
 
 .tasks {
-    border: 1px solid dimgray;
+    border: 1px solid rgb(60, 32, 221);
     min-width: 200px;
     border-radius: 20px;
     padding: 25px;
