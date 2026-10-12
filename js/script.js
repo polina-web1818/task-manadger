@@ -45,4 +45,20 @@ btnLowCase.addEventListener('click', function () {
 
 })
 
+// сортировка по имени задачи по алфавиту
+
+const btn1 = document.getElementById("btn1")
+function compare(a, b) {
+    if (a.querySelector("span").innerHTML > b.querySelector("spain").innerHTML) return 1
+    if (a.querySelector("span").innerHTML == b.querySelector("spain").innerHTML) return 0
+    if (a.querySelector("span").innerHTML < b.querySelector("spain").innerHTML) return -1
+}
+btn1.addEventListener("click", function(){
+    let newTasks = [...tasks].sort(compare)
+    container.innerHTML = "";
+    for (let i in newTasks){
+        container.append(newTasks[i])
+    }
+})
+
 
