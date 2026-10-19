@@ -15,7 +15,7 @@ formAddTask.addEventListener('submit', function (event) {
 
 
 
-    if(formAddTask.querySelector("#immediate").checked){
+    if (formAddTask.querySelector("#immediate").checked) {
         newTask.classList.add("immediate")
     }
 
@@ -61,10 +61,10 @@ function compare(a, b) {
     if (a.querySelector("span").innerHTML == b.querySelector("span").innerHTML) return 0
     if (a.querySelector("span").innerHTML < b.querySelector("span").innerHTML) return -1
 }
-btn1.addEventListener("click", function(){
+btn1.addEventListener("click", function () {
     let newTasks = [...tasks].sort(compare)
     container.innerHTML = "";
-    for (let i in newTasks){
+    for (let i in newTasks) {
         container.append(newTasks[i])
     }
 })
@@ -87,10 +87,10 @@ function compareReverse(a, b) {
     if (a.querySelector("span").innerHTML == b.querySelector("span").innerHTML) return 0
     if (a.querySelector("span").innerHTML < b.querySelector("span").innerHTML) return 1
 }
-btn2.addEventListener("click", function(){
+btn2.addEventListener("click", function () {
     let newTasks = [...tasks].sort(compareReverse)
     container.innerHTML = "";
-    for (let i in newTasks){
+    for (let i in newTasks) {
         container.append(newTasks[i])
     }
 })
@@ -99,14 +99,32 @@ btn2.addEventListener("click", function(){
 // фильтрация срочных задач
 
 const btn3 = document.getElementById("btn3")
-btn3.addEventListener("click", function(){
+btn3.addEventListener("click", function () {
     let newTasks = [...tasks]
-    newTasks = newTasks.filter(function(item){  
+    newTasks = newTasks.filter(function (item) {
         return item.classList.contains("immediate")
     })
     container.innerHTML = ""
-    for (let i in newTasks){
+    for (let i in newTasks) {
         container.append(newTasks[i])
     }
 
 })
+
+
+// поиск по тексту задачи
+
+const btn4 = document.getElementById("btn4")
+const search = document.getElementById("search")
+
+btn4.addEventListener("click", function () {
+    let value = search.value
+    let newTasks = [...tasks]
+    newTasks = newTasks.filter(function (item) {
+        return item.innerHTML.indexOf(value) != -1
+    })
+    container.innerHTML = ""
+    for (let i in newTasks) {
+        container.append(newTasks[i])
+    }
+    })
