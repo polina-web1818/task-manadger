@@ -75,3 +75,22 @@ let divs = document.querySelectorAll("div") // статическая колле
 // console.log(divs)
 let nodes = document.querySelector(".tasks").childNodes // динамическая коллекция
 // console.log(nodes)
+
+
+
+
+// сортировка против алфавитного порядка
+
+const btn2 = document.getElementById("btn2")
+function compareReverse(a, b) {
+    if (a.querySelector("span").innerHTML > b.querySelector("span").innerHTML) return -1
+    if (a.querySelector("span").innerHTML == b.querySelector("span").innerHTML) return 0
+    if (a.querySelector("span").innerHTML < b.querySelector("span").innerHTML) return 1
+}
+btn2.addEventListener("click", function(){
+    let newTasks = [...tasks].sort(compareReverse)
+    container.innerHTML = "";
+    for (let i in newTasks){
+        container.append(newTasks[i])
+    }
+})
