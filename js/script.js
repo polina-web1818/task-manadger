@@ -13,7 +13,7 @@ formAddTask.addEventListener('submit', function (event) {
     newTask.classList.add('task') // добавляем у div класс task
     container.append(newTask) // добавляем задачу в контейнер задач
 
-    tasks.push(nameTask) // добавляем задачу в массив
+    tasks.push(newTask) // добавляем задачу в массив
 
 
 })
@@ -27,7 +27,7 @@ btnLowCase.addEventListener('click', function () {
     let newTasks = [...tasks] // создаю новый масив на базе основного
 
     for (let i = 0; i < newTasks.length; i++) { // перебераем все элементы массива 
-        newTasks[i] = newTasks[i].toLowerCase() // переводим каждую задачу в нижний регистр
+        newTasks[i] = newTasks[i].innerHTML.toLowerCase() // переводим каждую задачу в нижний регистр
     }
 
 
@@ -49,9 +49,9 @@ btnLowCase.addEventListener('click', function () {
 
 const btn1 = document.getElementById("btn1")
 function compare(a, b) {
-    if (a.querySelector("span").innerHTML > b.querySelector("spain").innerHTML) return 1
-    if (a.querySelector("span").innerHTML == b.querySelector("spain").innerHTML) return 0
-    if (a.querySelector("span").innerHTML < b.querySelector("spain").innerHTML) return -1
+    if (a.querySelector("span").innerHTML > b.querySelector("span").innerHTML) return 1
+    if (a.querySelector("span").innerHTML == b.querySelector("span").innerHTML) return 0
+    if (a.querySelector("span").innerHTML < b.querySelector("span").innerHTML) return -1
 }
 btn1.addEventListener("click", function(){
     let newTasks = [...tasks].sort(compare)
