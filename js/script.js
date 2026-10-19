@@ -13,9 +13,15 @@ formAddTask.addEventListener('submit', function (event) {
     newTask.classList.add('task') // добавляем у div класс task
     container.append(newTask) // добавляем задачу в контейнер задач
 
-    tasks.push(newTask) // добавляем задачу в 
+
+
+    if(formAddTask.querySelector("#immediate").checked){
+        newTask.classList.add("immediate")
+    }
+
+    tasks.push(newTask) // добавляем задачу в массив
     // console.log(divs)
-    console.log(nodes)
+    // console.log(nodes)
 
 
 })
@@ -67,5 +73,5 @@ btn1.addEventListener("click", function(){
 // работа с NodeList
 let divs = document.querySelectorAll("div") // статическая коллекция
 // console.log(divs)
-let nodes = document.querySelector(".tasks").childNodes
-console.log(nodes)
+let nodes = document.querySelector(".tasks").childNodes // динамическая коллекция
+// console.log(nodes)

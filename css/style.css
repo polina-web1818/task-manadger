@@ -30,3 +30,11 @@ body {
     flex-direction: row;
     gap: 20px;
 }
+
+
+.immediate::after {
+    content: "!";
+    color: red;
+    margin-left: 10px;
+    font-weight: bold;
+}
