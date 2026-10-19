@@ -94,3 +94,19 @@ btn2.addEventListener("click", function(){
         container.append(newTasks[i])
     }
 })
+
+
+// фильтрация срочных задач
+
+const btn3 = document.getElementById("btn3")
+btn3.addEventListener("click", function(){
+    let newTasks = [...tasks]
+    newTasks = newTasks.filter(function(item){  
+        return item.classList.contains("immediate")
+    })
+    container.innerHTML = ""
+    for (let i in newTasks){
+        container.append(newTasks[i])
+    }
+
+})
