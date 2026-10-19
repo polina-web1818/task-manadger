@@ -1,7 +1,7 @@
 const formAddTask = document.getElementById("form-add-task") // форма создания новой задачи
 const inputTask = document.getElementById("name") // элемент куда пользователь вводит название новой задачи
 const container = document.querySelector(".tasks") // контейнер со списком задач
-let tasks = [] //  массив задач
+let tasks = [] //  список элементов задач (NodeList)
 
 
 // делаем функционал добавления задач
@@ -13,7 +13,9 @@ formAddTask.addEventListener('submit', function (event) {
     newTask.classList.add('task') // добавляем у div класс task
     container.append(newTask) // добавляем задачу в контейнер задач
 
-    tasks.push(newTask) // добавляем задачу в массив
+    tasks.push(newTask) // добавляем задачу в 
+    // console.log(divs)
+    console.log(nodes)
 
 
 })
@@ -62,3 +64,8 @@ btn1.addEventListener("click", function(){
 })
 
 
+// работа с NodeList
+let divs = document.querySelectorAll("div") // статическая коллекция
+// console.log(divs)
+let nodes = document.querySelector(".tasks").childNodes
+console.log(nodes)
